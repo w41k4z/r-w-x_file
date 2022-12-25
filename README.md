@@ -16,38 +16,38 @@ By w41k4z
 
 Import the jar file to your project libraries and there you go
 
-a- If you are using an IDE, install the right pluggins for java project
-b- Or, put the path to the jar file in your environment variable CLASS_PATH or also just compile and execute your java file with the parameter [-cp "<jar_file_path>" <java_file_name>]
+- If you are using an IDE, install the right pluggins for java project
+- Or, put the path to the jar file in your environment variable CLASS_PATH or also just compile and execute your java file with the parameter [-cp "<jar_file_path>" <java_file_name>]
 
 ## How to use
 
 ### Executor
 
-1- creating file : Executor.createNewFile(File root, String fileName, boolean isDirectory) => return the new File created;
-**root**: the parent directory (where the new file will be created)
-**fileName**: the file name
-**isDirectory**: to specify if the new file is actually a file or a directory
-2- clearing file content: Executor.clearFile(File file) => return void;
-**file**: the file to clear
-3- deleting file: Executor.deleteFile(File file) => return void;
-**file**: the file to delete
+- creating file : Executor.createNewFile(File root, String fileName, boolean isDirectory) => return the new File created;
+  **root**: the parent directory (where the new file will be created)
+  **fileName**: the file name
+  **isDirectory**: to specify if the new file is actually a file or a directory
+- clearing file content: Executor.clearFile(File file) => return void;
+  **file**: the file to clear
+- deleting file: Executor.deleteFile(File file) => return void;
+  **file**: the file to delete
 
 ### Reader
 
 First create a new Reader object with parameter the file to read (ex: Reader reader = new Reader(File test))
 
-1- reading file: reader.readFile(boolean toClose) => return line of text as ArrayList of String;
-**toClose**: to specify if you want to close the stream or not (maybe for another reading purpose)
-2- to check a certain value of string existence: reader.contains(String value, boolean toClose) => return boolean;
-**value**: the value to look for
-**toClose**: to specify if you want to close the stream or not
+- reading file: reader.readFile(boolean toClose) => return line of text as ArrayList of String;
+  **toClose**: to specify if you want to close the stream or not (maybe for another reading purpose)
+- to check a certain value of string existence: reader.contains(String value, boolean toClose) => return boolean;
+  **value**: the value to look for
+  **toClose**: to specify if you want to close the stream or not
 
 ### Writer
 
 First create a new Writer object with parameter the file to write (ex: Writer writer = new Writer(File test))
 
-1- writing file: writer.writeFile(Object[] data) => return void;
-**data**: array of data to write in the file
+- writing file: writer.writeFile(Object[] data) => return void;
+  **data**: array of data to write in the file
 
 ## Conclusion
 
