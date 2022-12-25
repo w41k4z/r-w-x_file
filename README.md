@@ -27,27 +27,30 @@ Import the jar file to your project libraries and there you go
   1. **root**: the parent directory (where the new file will be created)
   2. **fileName**: the file name
   3. **isDirectory**: to specify if the new file is actually a file or a directory
+
 - clearing file content: Executor.clearFile(File file) => return void;
-  **file**: the file to clear
+  1. **file**: the file to clear
+
 - deleting file: Executor.deleteFile(File file) => return void;
-  **file**: the file to delete
+  1. **file**: the file to delete
 
 ### Reader
 
 First create a new Reader object with parameter the file to read (ex: Reader reader = new Reader(File test))
 
 - reading file: reader.readFile(boolean toClose) => return line of text as ArrayList of String;
-  **toClose**: to specify if you want to close the stream or not (maybe for another reading purpose)
+  1. **toClose**: to specify if you want to close the stream or not (maybe for another reading purpose)
+
 - to check a certain value of string existence: reader.contains(String value, boolean toClose) => return boolean;
-  **value**: the value to look for
-  **toClose**: to specify if you want to close the stream or not
+  1. **value**: the value to look for
+  2. **toClose**: to specify if you want to close the stream or not
 
 ### Writer
 
 First create a new Writer object with parameter the file to write (ex: Writer writer = new Writer(File test))
 
 - writing file: writer.writeFile(Object[] data) => return void;
-  **data**: array of data to write in the file
+  1. **data**: array of data to write in the file
 
 ## Conclusion
 
