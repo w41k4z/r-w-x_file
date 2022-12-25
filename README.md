@@ -24,9 +24,9 @@ Import the jar file to your project libraries and there you go
 ### Executor
 
 - creating file : Executor.createNewFile(File root, String fileName, boolean isDirectory) => return the new File created;
-  **root**: the parent directory (where the new file will be created)
-  **fileName**: the file name
-  **isDirectory**: to specify if the new file is actually a file or a directory
+  \n\t\t**root**: the parent directory (where the new file will be created)
+  \n\t\t**fileName**: the file name
+  \n\t\t**isDirectory**: to specify if the new file is actually a file or a directory
 - clearing file content: Executor.clearFile(File file) => return void;
   **file**: the file to clear
 - deleting file: Executor.deleteFile(File file) => return void;
