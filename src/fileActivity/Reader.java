@@ -33,4 +33,15 @@ public class Reader extends BufferedReader {
         }
         return false;
     }
+
+    public StringBuilder readFile(boolean toClose, boolean toString) throws Exception {
+        if (toString) {
+            StringBuilder stringBuilder = new StringBuilder("");
+            for (String line : this.readFile(toClose)) {
+                stringBuilder.append(line);
+            }
+            return stringBuilder;
+        }
+        return null;
+    }
 }
