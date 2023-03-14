@@ -2,6 +2,7 @@ package fileActivity;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 
 public class Executor {
 
@@ -9,7 +10,8 @@ public class Executor {
             File root,
             String fileName,
             boolean isDirectory) throws Exception {
-        if(!root.isDirectory()) throw new Exception("The first parameter has to be a directory");
+        if (!root.isDirectory())
+            throw new Exception("The first parameter has to be a directory");
         File file = new File(root, fileName);
         if (isDirectory) {
             file.mkdir();
@@ -31,5 +33,19 @@ public class Executor {
             }
         }
         file.delete();
+    }
+
+    public static File[] getFileTree(File file) throws Exception {
+        ArrayList<File> files = new ArrayList<>();
+        files.add(file);
+        if (file.isDirectory()) {
+            File[] children = file.listFiles();
+            for (int i = 0; i < children.length; i++) {
+                for (File grandChildren : getFileTree(children[i])) {
+                    files.add(grandChildren);
+                }
+            }
+        }
+        return files.toArray(new File[files.size()]);
     }
 }
