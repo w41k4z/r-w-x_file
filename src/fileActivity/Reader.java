@@ -7,21 +7,9 @@ import java.util.ArrayList;
 
 public class Reader extends BufferedReader {
 
-    private File file;
-
     // constructor
     public Reader(File file) throws Exception {
         super(new FileReader(file));
-    }
-
-    // setter
-    public void setFile(File file) throws Exception {
-        this.file = file;
-    }
-
-    // getter
-    public File getFile() {
-        return this.file;
     }
 
     // methods
