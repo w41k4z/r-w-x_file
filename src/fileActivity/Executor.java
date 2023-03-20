@@ -50,7 +50,7 @@ public class Executor {
     }
 
     public static String getFileExtension(File file) {
-        String[] splittedName = file.getName().split(".");
+        String[] splittedName = file.getName().split("\\.");
         return splittedName[splittedName.length - 1];
     }
 }
