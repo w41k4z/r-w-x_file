@@ -48,4 +48,9 @@ public class Executor {
         }
         return files.toArray(new File[files.size()]);
     }
+
+    public static String getFileExtension(File file) {
+        String[] splittedName = file.getName().split(".");
+        return splittedName[splittedName.length - 1];
+    }
 }
