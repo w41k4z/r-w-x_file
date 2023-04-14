@@ -35,13 +35,15 @@ public class Executor {
         file.delete();
     }
 
-    public static File[] getFileTree(File file) throws Exception {
+    public static File[] getSubFiles(File file) throws Exception {
         ArrayList<File> files = new ArrayList<>();
-        files.add(file);
+        if (file.isFile()) {
+            files.add(file);
+        }
         if (file.isDirectory()) {
             File[] children = file.listFiles();
             for (int i = 0; i < children.length; i++) {
-                for (File grandChildren : getFileTree(children[i])) {
+                for (File grandChildren : getSubFiles(children[i])) {
                     files.add(grandChildren);
                 }
             }

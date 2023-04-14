@@ -26,6 +26,17 @@ public class Reader extends BufferedReader {
         return data;
     }
 
+    public String readFile(boolean toClose, boolean toString) throws Exception {
+        if (toString) {
+            StringBuilder stringBuilder = new StringBuilder("");
+            for (String line : this.readFile(toClose)) {
+                stringBuilder.append(line);
+            }
+            return stringBuilder.toString();
+        }
+        return null;
+    }
+
     public boolean contains(String string, boolean toClose) throws Exception {
         ArrayList<String> data = this.readFile(toClose);
         for (int i = 0; i < data.size(); i++) {
@@ -34,16 +45,5 @@ public class Reader extends BufferedReader {
             }
         }
         return false;
-    }
-
-    public StringBuilder readFile(boolean toClose, boolean toString) throws Exception {
-        if (toString) {
-            StringBuilder stringBuilder = new StringBuilder("");
-            for (String line : this.readFile(toClose)) {
-                stringBuilder.append(line);
-            }
-            return stringBuilder;
-        }
-        return null;
     }
 }
